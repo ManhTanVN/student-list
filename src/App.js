@@ -32,7 +32,7 @@ function App() {
             name: 'birthday',
             type: 'date',
             placeHolder: 'Birthday',
-            label: 'BirthDay',
+            label: 'Birthday',
             required: true,
             errorMessage: 'Birthday is required!',
             value: '',
