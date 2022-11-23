@@ -12,7 +12,7 @@ function List({ studentData, handleClear, handleEdit }) {
                                         <tr className="table-dark">
                                             <th>No</th>
                                             <th>Name</th>
-                                            <th>BirthDay</th>
+                                            <th>Birthday</th>
                                             <th>Email</th>
                                             <th>Phone Number</th>
                                             <th>Clear</th>
