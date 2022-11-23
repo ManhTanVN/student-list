@@ -1,0 +1,9 @@
+.error-message {
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
+.input-field:invalid[focused='true'] ~ .error-message {
+    display: block;
+}
