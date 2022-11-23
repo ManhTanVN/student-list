@@ -1,6 +1,6 @@
 import InputForm from './InputForm';
 
-function Form({ Props, handleSubmit, onChange }) {
+function Form({ Props, submitType, handleSubmit, onChange }) {
     return (
         <div>
             <div className="bg order-1 order-md-2"></div>
@@ -20,7 +20,7 @@ function Form({ Props, handleSubmit, onChange }) {
                                     </div>
                                 ))}
 
-                                <button className="btn mt-4 px-5 btn-primary">Submit</button>
+                                <button className="btn mt-4 px-5 btn-primary">{submitType}</button>
                             </form>
                         </div>
                     </div>

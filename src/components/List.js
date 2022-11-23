@@ -1,5 +1,4 @@
-function List({ studentData }) {
-    console.log('values: ', studentData);
+function List({ studentData, handleClear, handleEdit }) {
     return (
         <div className="">
             <div className="row align-items-center justify-content-center">
@@ -11,54 +10,39 @@ function List({ studentData }) {
                                 <table className="table table-striped table-hover table-bordered">
                                     <thead className="table thead-light thead-dark">
                                         <tr className="table-dark">
-                                            <th className="column100 column1" data-column="column1">
-                                                No
-                                            </th>
-                                            <th className="column100 column1" data-column="column2">
-                                                Name
-                                            </th>
-                                            <th className="column100 column2" data-column="column3">
-                                                BirthDay
-                                            </th>
-                                            <th className="column100 column3" data-column="column4">
-                                                Email
-                                            </th>
-                                            <th className="column100 column4" data-column="column5">
-                                                Phone Number
-                                            </th>
-                                            <th className="column100 column4" data-column="column5">
-                                                Clear
-                                            </th>
+                                            <th>No</th>
+                                            <th>Name</th>
+                                            <th>BirthDay</th>
+                                            <th>Email</th>
+                                            <th>Phone Number</th>
+                                            <th>Clear</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {studentData.map((value, index) => (
-                                            <>
-                                                <tr key={index} className="row100">
-                                                    <td className="column100 column1" data-column="column1">
-                                                        {index + 1}
-                                                    </td>
-                                                    <td className="column100 column1" data-column="column2">
-                                                        {value.studentname}
-                                                    </td>
-                                                    <td className="column100 column2" data-column="column3">
-                                                        {value.birthday}
-                                                    </td>
-                                                    <td className="column100 column3" data-column="column4">
-                                                        {value.email}
-                                                    </td>
-                                                    <td className="column100 column4" data-column="column5">
-                                                        {value.phone}
-                                                    </td>
-                                                    <td
+                                            <tr key={index} className="row100">
+                                                <td>{index + 1}</td>
+                                                <td>{value.studentname}</td>
+                                                <td>{value.birthday}</td>
+                                                <td>{value.email}</td>
+                                                <td>{value.phone}</td>
+                                                <td className="text-underline-hover">
+                                                    <span
+                                                        onClick={() => handleEdit(index, value)}
                                                         role="button"
-                                                        className="text-underline-hover"
-                                                        data-column="column5"
+                                                        className="me-3 p-1"
+                                                    >
+                                                        Edit
+                                                    </span>
+                                                    <span
+                                                        onClick={() => handleClear(index)}
+                                                        role="button"
+                                                        className="p-1 "
                                                     >
                                                         Clear
-                                                    </td>
-                                                </tr>
-                                            </>
+                                                    </span>
+                                                </td>
+                                            </tr>
                                         ))}
                                     </tbody>
                                 </table>
