@@ -1,10 +1,20 @@
-import { useState } from 'react';
 import './InputForm.css';
-
-function InputForm({ inputProps, onChange }) {
+import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { ThemeProvider } from './ContextProvider';
+function InputForm({ inputProps }) {
+    const { onChange, isSubmit, setIsSubmit } = useContext(ThemeProvider);
     const [focused, setFocused] = useState(false);
+
+    useEffect(() => {
+        if (isSubmit) {
+            setFocused(false);
+        }
+    }, [isSubmit]);
+
     const handleFocused = (e) => {
         setFocused(true);
+        setIsSubmit(false);
     };
     return (
         <>
@@ -19,6 +29,7 @@ function InputForm({ inputProps, onChange }) {
                 required={inputProps.required}
                 onBlur={handleFocused}
                 focused={focused.toString()}
+                value={inputProps.value}
             ></input>
             <span className="error-message">{inputProps.errorMessage}</span>
         </>

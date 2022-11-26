@@ -1,6 +1,9 @@
 import InputForm from './InputForm';
+import { useContext } from 'react';
+import { ThemeProvider } from './ContextProvider';
 
-function Form({ Props, submitType, handleSubmit, onChange }) {
+function Form() {
+    const { inputs, submitType, handleSubmit } = useContext(ThemeProvider);
     return (
         <div>
             <div className="bg order-1 order-md-2"></div>
@@ -10,11 +13,11 @@ function Form({ Props, submitType, handleSubmit, onChange }) {
                         <div className="py-3">
                             <h3 className="text-uppercase">Add Student</h3>
                             <form id="student-form-content" onSubmit={handleSubmit} action="#" method="post">
-                                {Props.map((inputProps) => (
+                                {inputs.map((inputProps) => (
                                     <div key={inputProps.id} className="row">
                                         <div className="col-md-12 mb-3">
                                             <div className="form-group first">
-                                                <InputForm inputProps={inputProps} onChange={onChange} />
+                                                <InputForm inputProps={inputProps} />
                                             </div>
                                         </div>
                                     </div>

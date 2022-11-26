@@ -1,4 +1,7 @@
-function List({ studentData, handleClear, handleEdit }) {
+import { useContext } from 'react';
+import { ThemeProvider } from './ContextProvider';
+function List() {
+    const { studentData, handleClear, handleEdit } = useContext(ThemeProvider);
     return (
         <div className="">
             <div className="row align-items-center justify-content-center">
