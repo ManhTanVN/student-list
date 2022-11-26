@@ -18,7 +18,7 @@ function List() {
                                             <th>Birthday</th>
                                             <th>Email</th>
                                             <th>Phone Number</th>
-                                            <th>Clear</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,14 +33,14 @@ function List() {
                                                     <span
                                                         onClick={() => handleEdit(index, value)}
                                                         role="button"
-                                                        className="me-3 p-1"
+                                                        className="btn btn-danger me-3 p-10 py-1 px-4"
                                                     >
                                                         Edit
                                                     </span>
                                                     <span
                                                         onClick={() => handleClear(index)}
                                                         role="button"
-                                                        className="p-1 "
+                                                        className="btn btn-warning py-1 px-4"
                                                     >
                                                         Clear
                                                     </span>
